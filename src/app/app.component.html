@@ -1,0 +1,44 @@
+<div>jhjhjhj</div>
+<div>
+<form [formGroup] = "cotizacionForm" (ngSubmit)="guardar">
+
+
+<div class="formGroup">
+
+    <label>Estado</label>
+    <input type="text" formControlName = "estado" class="form-control"> 
+
+</div>
+
+
+<div class="formGroup">
+
+    <label>Pais</label>
+    <select name="pais" id="pais" formControlName = "pais" class="form-control"> 
+        <option value="item.id" *ngFor="let item of paises">{{item.name}}</option>
+    </select>
+
+</div>
+
+
+<div class="formGroup">
+
+    <label>Ciudad</label>
+    <select name="ciudad" id="ciudad" formControlName = "ciudad" class="form-control" (change)="cargarCiudadesPorPais"> 
+        <option value="item.id" *ngFor="let item of ciudades">{{item.name}}</option>
+    </select>
+
+</div>
+
+
+
+</form>
+
+</div>
+
+
+
+
+
+
+<router-outlet></router-outlet>
